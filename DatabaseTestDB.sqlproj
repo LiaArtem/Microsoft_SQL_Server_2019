@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DatabaseTestDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{0096ca5b-2b7d-483f-a28f-a8b8b2aa1efe}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>CLRUserDefined</RootNamespace>
+    <AssemblyName>CLRUserDefined</AssemblyName>
+    <ModelCollation>1049,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
+    <DefaultCollation>Cyrillic_General_CI_AS</DefaultCollation>
+    <TargetFrameworkProfile />
+    <PermissionSet>EXTERNAL_ACCESS</PermissionSet>
+    <AssemblyOwner>
+    </AssemblyOwner>
+    <Trustworthy>True</Trustworthy>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>SQL71502, SQL71562</NoWarn>
+    <SuppressTSqlWarnings>71502,71562</SuppressTSqlWarnings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="type" />
+    <Folder Include="CLR" />
+    <Folder Include="CLR_EXT" />
+    <Folder Include="table" />
+    <Folder Include="sequence" />
+    <Folder Include="view" />
+    <Folder Include="CLR_EXT\assembly" />
+    <Folder Include="function" />
+    <Folder Include="procedure" />
+    <Folder Include="function\check" />
+    <Folder Include="function\convert" />
+    <Folder Include="procedure\convert" />
+    <Folder Include="function\public" />
+    <Folder Include="procedure\interface" />
+    <Folder Include="procedure\service" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="type\t_read_kurs_nbu.sql" />
+    <Build Include="CLR_EXT\CLR_convert_str_ext.sql" />
+    <Build Include="CLR_EXT\CLR_GetHexString.sql" />
+    <Build Include="type\t_erb_minfin.sql" />
+    <Build Include="table\CURRENCY.sql" />
+    <Build Include="table\KURS.sql" />
+    <Build Include="sequence\SEQ_KURS.sql" />
+    <Build Include="CLR_EXT\assembly\CLRTextConvertEXT.sql" />
+    <Build Include="function\check\is_valid_json.sql" />
+    <Build Include="function\check\is_valid_xml.sql" />
+    <Build Include="function\convert\base64_decode.sql" />
+    <Build Include="function\convert\base64_encode.sql" />
+    <Build Include="function\convert\convert_cp866_to_1251.sql" />
+    <Build Include="function\convert\get_datetime.sql" />
+    <Build Include="function\convert\num_to_str.sql" />
+    <Build Include="function\convert\str_amount.sql" />
+    <Build Include="function\convert\str_amount_format.sql" />
+    <Build Include="function\convert\str_interest.sql" />
+    <Build Include="function\convert\str_to_date_func.sql" />
+    <Build Include="function\convert\str_to_num_func.sql" />
+    <Build Include="function\convert\str_xml_format.sql" />
+    <Build Include="procedure\convert\str_to_num.sql" />
+    <Build Include="procedure\convert\str_to_date.sql" />
+    <Build Include="procedure\convert\date_to_str.sql" />
+    <Build Include="function\public\instr.sql" />
+    <Build Include="function\public\lpad.sql" />
+    <Build Include="function\public\rpad.sql" />
+    <Build Include="function\public\split_part.sql" />
+    <Build Include="procedure\interface\read_erb_minfin.sql" />
+    <Build Include="procedure\interface\read_fair_value.sql" />
+    <Build Include="procedure\interface\read_isin_secur.sql" />
+    <Build Include="procedure\interface\read_kurs_nbu.sql" />
+    <Build Include="procedure\interface\send_email.sql" />
+    <Build Include="procedure\service\HttpRequest.sql" />
+    <Build Include="procedure\interface\add_kurs_nbu.sql" />
+    <Build Include="table\KURS_HIST.sql" />
+    <Build Include="sequence\SEQ_KURS_HIST.sql" />
+    <Build Include="view\VIEW_KURS.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>True</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLR\CLR_User_Manual.cs" />
+  </ItemGroup>
+</Project>
