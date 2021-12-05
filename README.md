@@ -11,12 +11,12 @@ SQL CLR C#, assembly (CLR) scalar-functions, OLE Automation Stored Procedures)
   - sql_settings_GRANT_OLE_and_CLR.sql
 
 - загрузка данных в таблицы
-  .\sql_add_DB\*
+  - .\sql_add_DB\*
   Порядок запуска
-  1) insert_CURRENCY_UAH.sql
-  2) sql_add_kurs_nbu_on_date.sql
-  3) sql_add_fair_value.sql
-  4) sql_add_isin_secur.sql
+  - 1-insert_CURRENCY_UAH.sql
+  - 2-sql_add_kurs_nbu_on_date.sql
+  - 3-sql_add_fair_value.sql
+  - 4-sql_add_isin_secur.sql
 
 Дополнительно:
   - sql_settings_DBMail.sql
