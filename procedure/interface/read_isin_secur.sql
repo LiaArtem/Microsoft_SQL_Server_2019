@@ -33,6 +33,7 @@ BEGIN
    SET @p_url = 'https://bank.gov.ua/depo_securities' + @p_dop_param;
 
    -- запрашиваем данные
+   /*
    EXECUTE [dbo].[HttpRequest]
      @URI = @p_url,
      @MethodName = N'Get',
@@ -42,6 +43,15 @@ BEGIN
      @Password = default,
      @ResponseText = @p_response_body output,
      @ExportToFile = default
+   */
+   -- пришлось убрать так как из-за нее результат пустой если использовать внутри других процедур
+   EXECUTE [dbo].[CLR_HttpRequest]
+     @p_URI = @p_url,
+     @p_MethodName = 'GET',
+	 @p_RequestBody = '',
+	 @p_EncodingCode = 'utf-8',
+	 @p_ContentType = '',
+	 @p_ResponseText = @p_response_body output 
       
    -- JSON формат
    IF @p_format = 'json' and (SELECT [dbo].[is_valid_json] (@p_response_body)) = 'T'

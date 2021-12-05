@@ -13,7 +13,7 @@ BEGIN
    SET @p_url = 'https://bank.gov.ua/files/Fair_value/' + SUBSTRING(@p_date_str, 1, 6) + '/' + @p_date_str + '_fv.txt';
 
    -- запрашиваем данные
-   EXECUTE [dbo].[CLR_HttpRequest]
+   EXECUTE [dbo].[CLR_HttpRequest] --[HttpRequest] пришлось убрать так как из-за нее результат пустой если использовать внутри других процедур
      @p_URI = @p_url,
      @p_MethodName = 'GET',
      @p_RequestBody = '',

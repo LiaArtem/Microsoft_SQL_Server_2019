@@ -24,7 +24,7 @@ BEGIN
        SET @p_url = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=' + @p_currency + '&date=' + @p_date_str + @p_dop_param;  
 
    -- запрашиваем данные
-   EXECUTE [dbo].[CLR_HttpRequest]
+   EXECUTE [dbo].[CLR_HttpRequest] --[HttpRequest] пришлось убрать так как из-за нее результат пустой если использовать внутри других процедур
      @p_URI = @p_url,
      @p_MethodName = 'GET',
 	 @p_RequestBody = '',

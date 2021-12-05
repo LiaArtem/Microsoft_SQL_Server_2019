@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="50eabf18-e5af-4abf-b351-d0af39773df1" ChangeDateTime="12/05/2021 12:35:27">
+    <Property Name="ElementName" Value="[dbo].[FAIR_VALUE].[CURR_CODE]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FAIR_VALUE]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CURRENCY_CODE" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="872889fc-b7ff-4c04-b29e-9f4d2d12b318" ChangeDateTime="12/05/2021 12:43:25">
+    <Property Name="ElementName" Value="[dbo].[FAIR_VALUE].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FAIR_VALUE]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e8d53467-2237-4f99-901e-28633dd5bef8" ChangeDateTime="12/05/2021 13:29:03">
+    <Property Name="ElementName" Value="[dbo].[ISIN_SECUR].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ISIN_SECUR]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1ea5ed5d-6836-42a3-9cc7-98803fc2bfb6" ChangeDateTime="12/05/2021 13:38:46">
+    <Property Name="ElementName" Value="[dbo].[ISIN_SECUR_PAY].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ISIN_SECUR_PAY]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7f685fec-4a38-4e8f-a37e-62075b2c3f21" ChangeDateTime="12/05/2021 14:02:17">
+    <Property Name="ElementName" Value="[dbo].[ISIN_SECUR].[CPCODE_CFI ]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ISIN_SECUR]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CPCODE_CFI" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8ca826aa-c4f9-4324-9d20-3f0d6b56adec" ChangeDateTime="12/05/2021 14:26:53">
+    <Property Name="ElementName" Value="[dbo].[ISIN_SECUR_PAY].[ISIN_SECUR_ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ISIN_SECUR_PAY]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SECUR_ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5fc89e31-4d81-445c-ac37-50f7010f84f5" ChangeDateTime="12/05/2021 14:27:20">
+    <Property Name="ElementName" Value="[dbo].[ISIN_SECUR_PAY].[SECUR_ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ISIN_SECUR_PAY]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ISIN_SECUR_ID" />
+  </Operation>
+</Operations>

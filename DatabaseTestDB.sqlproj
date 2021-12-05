@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{0096ca5b-2b7d-483f-a28f-a8b8b2aa1efe}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -120,6 +120,12 @@
     <Build Include="table\KURS_HIST.sql" />
     <Build Include="sequence\SEQ_KURS_HIST.sql" />
     <Build Include="view\VIEW_KURS.sql" />
+    <Build Include="procedure\interface\add_kurs_nbu_on_date.sql" />
+    <Build Include="table\FAIR_VALUE.sql" />
+    <Build Include="procedure\interface\add_fair_value.sql" />
+    <Build Include="table\ISIN_SECUR.sql" />
+    <Build Include="table\ISIN_SECUR_PAY.sql" />
+    <Build Include="procedure\interface\add_isin_secur.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">
@@ -135,5 +141,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLR\CLR_User_Manual.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="DatabaseTestDB.refactorlog" />
   </ItemGroup>
 </Project>
