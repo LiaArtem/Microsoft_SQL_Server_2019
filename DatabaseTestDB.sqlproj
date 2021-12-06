@@ -126,6 +126,8 @@
     <Build Include="table\ISIN_SECUR.sql" />
     <Build Include="table\ISIN_SECUR_PAY.sql" />
     <Build Include="procedure\interface\add_isin_secur.sql" />
+    <Build Include="view\VIEW_KURS_REPORT.sql" />
+    <Build Include="view\VIEW_FAIR_REPORT.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">
