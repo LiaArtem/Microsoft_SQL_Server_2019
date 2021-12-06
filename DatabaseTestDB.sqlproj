@@ -80,6 +80,7 @@
     <Folder Include="function\public" />
     <Folder Include="procedure\interface" />
     <Folder Include="procedure\service" />
+    <Folder Include="procedure\report" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="type\t_read_kurs_nbu.sql" />
@@ -128,6 +129,7 @@
     <Build Include="procedure\interface\add_isin_secur.sql" />
     <Build Include="view\VIEW_KURS_REPORT.sql" />
     <Build Include="view\VIEW_FAIR_REPORT.sql" />
+    <Build Include="procedure\report\proc_fair_report.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">

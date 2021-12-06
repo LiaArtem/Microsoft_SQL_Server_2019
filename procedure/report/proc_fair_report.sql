@@ -1,0 +1,40 @@
+﻿CREATE PROCEDURE [dbo].[proc_fair_report]	
+	@calc_date date,
+	@isin nvarchar(255) = ''
+AS
+  -- Отчет о ЦБ и их справедливой стоимости
+	WITH FAIR_VALUE_LIST (ISIN, LAST_CALC_DATE, LAST_FAIR_VALUE) AS
+	(
+		SELECT ff.ISIN,
+			   MAX(ff.LAST_CALC_DATE) as LAST_CALC_DATE,
+			   MAX(ff.LAST_FAIR_VALUE) as LAST_FAIR_VALUE
+		FROM
+		(
+		 SELECT f.ISIN,
+				FIRST_VALUE(f.CALC_DATE) OVER (PARTITION BY f.ISIN ORDER BY f.CALC_DATE DESC ROWS UNBOUNDED PRECEDING) AS LAST_CALC_DATE,
+				FIRST_VALUE(f.FAIR_VALUE) OVER (PARTITION BY f.ISIN ORDER BY f.CALC_DATE DESC ROWS UNBOUNDED PRECEDING) AS LAST_FAIR_VALUE
+		 FROM FAIR_VALUE f
+		 WHERE f.CALC_DATE <= @calc_date AND (ISNULL(@isin,'') = '' or f.ISIN = @isin)
+		) ff
+		GROUP BY ff.ISIN
+	)
+	SELECT s.ISIN,
+		   s.NOMINAL,
+		   s.PAY_PERIOD,
+		   s.EMIT_NAME,
+		   sp.PAY_DATE,
+		   CASE sp.PAY_TYPE
+			 WHEN 1 THEN 'Выплата %'
+			 WHEN 2 THEN 'Выплата купона'
+		   END as PAY_TYPE,
+		   sp.PAY_VAL,
+		   f.LAST_FAIR_VALUE,
+		   f.LAST_CALC_DATE
+	FROM ISIN_SECUR s
+	LEFT OUTER JOIN ISIN_SECUR_PAY sp on s.ID = sp.ISIN_SECUR_ID AND sp.PAY_DATE >= @calc_date
+	LEFT OUTER JOIN FAIR_VALUE_LIST f on s.ISIN = f.ISIN
+	WHERE
+	   (ISNULL(@isin,'') = '' or s.ISIN = @isin)
+	;
+
+RETURN 0
