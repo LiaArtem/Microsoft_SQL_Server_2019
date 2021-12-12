@@ -130,6 +130,7 @@
     <Build Include="view\VIEW_KURS_REPORT.sql" />
     <Build Include="view\VIEW_FAIR_REPORT.sql" />
     <Build Include="procedure\report\proc_fair_report.sql" />
+    <Build Include="procedure\interface\insert_kurs.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">
@@ -148,5 +149,8 @@
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DatabaseTestDB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="table\Script.PostDeployment_insert_CURRENCY.sql" />
   </ItemGroup>
 </Project>
