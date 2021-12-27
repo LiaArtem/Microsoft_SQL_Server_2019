@@ -131,6 +131,8 @@
     <Build Include="view\VIEW_FAIR_REPORT.sql" />
     <Build Include="procedure\report\proc_fair_report.sql" />
     <Build Include="procedure\interface\insert_kurs.sql" />
+    <Build Include="table\KURS_SSIS.sql" />
+    <Build Include="sequence\SEQ_KURS_SSIS_ID_EXT.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">
