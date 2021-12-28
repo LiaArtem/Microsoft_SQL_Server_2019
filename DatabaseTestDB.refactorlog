@@ -49,4 +49,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ISIN_SECUR_ID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="bf4eb621-584c-40d1-8926-df4e99184d1e" ChangeDateTime="12/28/2021 07:41:46">
+    <Property Name="ElementName" Value="[dbo].[KURS_SSIS].[HESH]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[KURS_SSIS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HASH_COLIMN" />
+  </Operation>
 </Operations>

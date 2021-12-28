@@ -133,6 +133,7 @@
     <Build Include="procedure\interface\insert_kurs.sql" />
     <Build Include="table\KURS_SSIS.sql" />
     <Build Include="sequence\SEQ_KURS_SSIS_ID_EXT.sql" />
+    <Build Include="procedure\interface\add_kurs_nbu_ssis.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">
