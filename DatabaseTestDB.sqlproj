@@ -29,6 +29,7 @@
     <AssemblyOwner>
     </AssemblyOwner>
     <Trustworthy>True</Trustworthy>
+    <DacVersion>2.0.0.0</DacVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
