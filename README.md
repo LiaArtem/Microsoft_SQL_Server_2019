@@ -19,3 +19,5 @@ SQL CLR C#, assembly (CLR) scalar-functions, OLE Automation Stored Procedures)
 Дополнительно если нужно отдельно обновить:
   - sql_settings_CLR_EXTERNAL.sql
 
+Если нет .NET 4.5.2 скачать и установить.
+https://dotnet.microsoft.com/en-us/download/visual-studio-sdks?utm_source=getdotnetsdk&utm_medium=referral

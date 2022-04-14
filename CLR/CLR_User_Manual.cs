@@ -19,7 +19,8 @@ public partial class UserDefined
                                        SqlString p_ContentType, // пример - text/xml or application/json; encoding='utf-8'
                                        out SqlString p_ResponseText)
     {
-        p_ResponseText = "";                
+        p_ResponseText = "";
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
         var httpWebRequest = (HttpWebRequest)WebRequest.Create(p_URI.ToString());
         httpWebRequest.Method = p_MethodName.ToString();
         httpWebRequest.ContentType = p_ContentType.ToString();
