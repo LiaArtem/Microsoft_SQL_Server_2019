@@ -135,6 +135,14 @@
     <Build Include="table\KURS_SSIS.sql" />
     <Build Include="sequence\SEQ_KURS_SSIS_ID_EXT.sql" />
     <Build Include="procedure\interface\add_kurs_nbu_ssis.sql" />
+    <Build Include="table\BUFF_IMPORT_DATA.sql" />
+    <Build Include="procedure\interface\exec_read_kurs_nbu.sql" />
+    <Build Include="procedure\interface\exec_add_kurs_nbu.sql" />
+    <Build Include="procedure\interface\get_error_info.sql" />
+    <Build Include="procedure\interface\exec_read_isin_secur.sql" />
+    <Build Include="procedure\interface\exec_add_isin_secur.sql" />
+    <Build Include="procedure\interface\exec_add_fair_value.sql" />
+    <Build Include="procedure\interface\exec_read_fair_value.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">
